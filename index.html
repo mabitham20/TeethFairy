@@ -448,28 +448,21 @@
    FOOD DATA
 ════════════════════════════════════════════ */
 const GOOD_FOODS = [
-  { emoji:'🍎', name:'Apple',      vitamin:'Vitamin C & Fibre',   benefit:'Acts like a natural toothbrush — crunching scrubs plaque and stimulates gums.' },
-  { emoji:'🥕', name:'Carrot',     vitamin:'Vitamin A & K',       benefit:'Raw carrots scrub teeth. Vitamin A builds strong enamel.' },
-  { emoji:'🧀', name:'Cheese',     vitamin:'Calcium & Phosphate', benefit:'Raises mouth pH and is rich in calcium to protect enamel.' },
-  { emoji:'🥦', name:'Broccoli',   vitamin:'Vitamin C & K',       benefit:'Iron coating guards enamel. Florets gently clean teeth.' },
-  { emoji:'🍓', name:'Strawberry', vitamin:'Vitamin C',           benefit:'Malic acid whitens teeth; Vitamin C supports healthy gums.' },
-  { emoji:'🥝', name:'Kiwi',       vitamin:'Vitamin C & E',       benefit:'More Vitamin C than an orange — vital for gum collagen.' },
-  { emoji:'🍇', name:'Grapes',     vitamin:'Vitamin C & K',       benefit:'Polyphenols stop cavity bacteria from sticking to teeth.' },
-  { emoji:'🥛', name:'Milk',       vitamin:'Calcium & Vitamin D', benefit:'Remineralises enamel; Vitamin D helps absorb calcium.' },
-  { emoji:'🌰', name:'Almond',     vitamin:'Calcium & Protein',   benefit:'Low sugar, high calcium. Chewing almonds cleans teeth.' },
-  { emoji:'🫐', name:'Blueberry',  vitamin:'Vitamin C & K',       benefit:'Antioxidants fight bacteria causing gum disease.' },
-  { emoji:'🥬', name:'Spinach',    vitamin:'Calcium & Folate',    benefit:'Folic acid promotes healthy gum cell growth.' },
-  { emoji:'🍊', name:'Orange',     vitamin:'Vitamin C',           benefit:'Vitamin C strengthens gum tissue and blood vessels.' },
+  { emoji:'🥕', name:'Vitamin A', vitamin:'Healthy Mouth!',        benefit:'Keeps gums and oral lining healthy. Helps saliva production and wound healing.' },
+  { emoji:'🌾', name:'Vitamin B', vitamin:'Strong Oral Tissues!',  benefit:'Prevents mouth ulcers, sore tongue, and cracked lips.' },
+  { emoji:'🍊', name:'Vitamin C', vitamin:'Healthy Gums!',         benefit:'Builds collagen, prevents bleeding gums, and speeds healing.' },
+  { emoji:'🥛', name:'Vitamin D', vitamin:'Strong Teeth!',         benefit:'Helps calcium absorption for strong teeth and jaw bones.' },
+  { emoji:'🥜', name:'Vitamin E', vitamin:'Fast Healing!',         benefit:'Protects oral tissues and supports healing.' },
+  { emoji:'🥬', name:'Vitamin K', vitamin:'Healthy Gums!',         benefit:'Helps blood clotting and reduces gum bleeding.' },
 ];
 const BAD_FOODS = [
-  { emoji:'🍫', name:'Chocolate', effect:'Sugar feeds bacteria that produce acids, eating through enamel and causing cavities.' },
-  { emoji:'🥤', name:'Cola',      effect:'pH ~2.5 — erodes enamel faster than almost any food. Sugar feeds cavity bacteria.' },
-  { emoji:'🍪', name:'Cookie',    effect:'Sugar and starch stick to surfaces, creating prolonged acid attacks on enamel.' },
-  { emoji:'🚬', name:'Cigarette', effect:'Nicotine and tar stain teeth dark yellow. Smoking triples risk of gum disease.' },
-  { emoji:'🍬', name:'Candy',     effect:'Hard candies bathe teeth in sugar; sticky ones cling to grooves for hours.' },
-  { emoji:'🍩', name:'Doughnut',  effect:'Sugar + refined flour = long acid attack. Sticky texture presses sugar onto enamel.' },
-  { emoji:'🧃', name:'Juice Box', effect:'Concentrated sugar and natural acids erode enamel, especially with prolonged sipping.' },
-  { emoji:'🍟', name:'Fries',     effect:'Starch turns to sugar quickly, lodging between teeth and feeding bacteria for hours.' },
+  { emoji:'🍩', name:'Doughnut',  tagline:'Too much sugar!', effect:'Causes tooth decay (cavities), plaque buildup, and acid attack on enamel.' },
+  { emoji:'🧃', name:'Juice Box', tagline:'Hidden sugar!',   effect:'Sugary and often acidic, increasing the risk of cavities and enamel erosion.' },
+  { emoji:'🥤', name:'Cola',      tagline:'Acid Attack!',    effect:'Erodes tooth enamel, causes cavities, tooth sensitivity, and can stain teeth.' },
+  { emoji:'🍪', name:'Cookie',    tagline:'Too much sugar!', effect:'Sugary cookies increase plaque, leading to cavities and tooth decay.' },
+  { emoji:'🚬', name:'Cigarette', tagline:'Danger!',         effect:'Causes stained teeth, bad breath, gum disease, delayed healing, and greatly increases the risk of oral cancer.' },
+  { emoji:'🍬', name:'Candy',     tagline:'Sugar Alert!',    effect:'Causes cavities by feeding plaque bacteria that produce acid. Frequent candy eating increases the risk of tooth decay.' },
+  { emoji:'🍟', name:'Fries',     tagline:'Sticky starch!',  effect:'Starchy foods break down into sugars that feed plaque bacteria, increasing the risk of cavities if oral hygiene is poor.' },
 ];
 
 /* ════════════════════════════════════════════
@@ -650,7 +643,7 @@ function showCard(data, isGood) {
     : `<div class="ci">${iconHTML}</div>
        <div class="cn">${data.name}</div>
        <div class="ct bad">❌ Bad for teeth!</div>
-       <div class="cd">${data.effect}</div>`;
+       <div class="cd"><strong>${data.tagline}</strong><br>${data.effect}</div>`;
   document.body.appendChild(c);
   clearTimeout(infoTimer);
   infoTimer = setTimeout(clearCard, 4200);
