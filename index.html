@@ -448,12 +448,12 @@
    FOOD DATA
 ════════════════════════════════════════════ */
 const GOOD_FOODS = [
-  { emoji:'🥕', name:'Carrot', vitamin:'Vitamin A, Healthy Mouth!',        benefit:'Keeps gums and oral lining healthy. Helps saliva production and wound healing.' },
-  { emoji:'🌾', name:'Corn', vitamin:'Vitamin B, Strong Oral Tissues!',  benefit:'Prevents mouth ulcers, sore tongue, and cracked lips.' },
-  { emoji:'🍊', name:'Orange', vitamin:'Vitamin c, Healthy Gums!',         benefit:'Builds collagen, prevents bleeding gums, and speeds healing.' },
-  { emoji:'🥛', name:'Milk', vitamin:'Vitamin D, Strong Teeth!',         benefit:'Helps calcium absorption for strong teeth and jaw bones.' },
-  { emoji:'🥜', name:'Peanut', vitamin:'Vitamin E, Fast Healing!',         benefit:'Protects oral tissues and supports healing.' },
-  { emoji:'🥬', name:'Spinach', vitamin:'Vitamin K, Healthy Gums!',         benefit:'Helps blood clotting and reduces gum bleeding.' },
+  { emoji:'🥕', name:'Carrot',  vitamin:'Vitamin A', tagline:'Healthy Mouth!',       benefit:'Keeps gums and oral lining healthy. Helps saliva production and wound healing.' },
+  { emoji:'🌾', name:'Corn',    vitamin:'Vitamin B', tagline:'Strong Oral Tissues!', benefit:'Prevents mouth ulcers, sore tongue, and cracked lips.' },
+  { emoji:'🍊', name:'Orange',  vitamin:'Vitamin C', tagline:'Healthy Gums!',        benefit:'Builds collagen, prevents bleeding gums, and speeds healing.' },
+  { emoji:'🥛', name:'Milk',    vitamin:'Vitamin D', tagline:'Strong Teeth!',        benefit:'Helps calcium absorption for strong teeth and jaw bones.' },
+  { emoji:'🥜', name:'Peanut',  vitamin:'Vitamin E', tagline:'Fast Healing!',        benefit:'Protects oral tissues and supports healing.' },
+  { emoji:'🥬', name:'Spinach', vitamin:'Vitamin K', tagline:'Healthy Gums!',        benefit:'Helps blood clotting and reduces gum bleeding.' },
 ];
 const BAD_FOODS = [
   { emoji:'🍩', name:'Doughnut',  tagline:'Too much sugar!', effect:'Causes tooth decay (cavities), plaque buildup, and acid attack on enamel.' },
@@ -639,7 +639,7 @@ function showCard(data, isGood) {
     ? `<div class="ci">${iconHTML}</div>
        <div class="cn">${data.name}</div>
        <div class="ct good">✅ Good for teeth!</div>
-       <div class="cd"><strong>${data.vitamin}</strong><br>${data.benefit}</div>`
+       <div class="cd"><strong>${data.vitamin} — ${data.tagline}</strong><br>${data.benefit}</div>`
     : `<div class="ci">${iconHTML}</div>
        <div class="cn">${data.name}</div>
        <div class="ct bad">❌ Bad for teeth!</div>
